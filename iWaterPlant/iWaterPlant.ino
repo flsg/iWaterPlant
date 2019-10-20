@@ -30,6 +30,7 @@ void setup() {
 void loop() {
   moistureValue = analogRead(A0); // read water analog value
   moistureLevel = map(moistureValue, 0, 1023, 0, 100);  // convert its to percentage
+  moistureLevel = 100 - moistureLevel;  // invert reading
 
   // Display moisture level on serial
   Serial.print("Moisture Level: ");
